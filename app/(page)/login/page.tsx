@@ -15,7 +15,7 @@ export default function Login() {
     const email = event.currentTarget.email.value;
     const password = event.currentTarget.password.value;
     
-    const loginData = await signIn('credentials', {
+    const loginData = await signIn("credentials", {
       email: email,
       password: password,
       redirect: false
@@ -24,7 +24,7 @@ export default function Login() {
     if (loginData?.error) {
       handleMessage("Error", "Ooops!Something went wrong.", "destructive");
     } else {
-      router.push('/home');
+      router.push("/home");
     }
     
   }

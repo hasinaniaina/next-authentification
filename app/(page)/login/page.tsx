@@ -1,8 +1,7 @@
 "use client"
-
-
 import { handleMessage } from "@/lib/utils";
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { FormEvent } from "react";
@@ -67,7 +66,7 @@ export default function Login() {
         <button onClick={() => {
           signIn('google', {callbackUrl: "/home", redirect: true});
         }}>
-          <img src="google.png" alt="google icon" />
+          <Image width={20} height={20} src="/google.png" alt="google icon" />
           Sign with Google
           </button>
       </div>

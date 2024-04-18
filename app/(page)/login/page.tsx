@@ -57,14 +57,14 @@ export default function Login() {
         </div>
         <div className="not-account">
           <p>
-            Don't have an account? <Link href="/signin">Sign up</Link>
+            Don&rsquo;t have an account? <Link href="/signin">Sign up</Link>
           </p>
         </div>
       </div>
       <p className="or">Or</p>
       <div className="google-sign">
         <button onClick={() => {
-          signIn('google', {callbackUrl: "/home", redirect: true});
+          signIn("google", {callbackUrl: "/home", redirect: true});
         }}>
           <Image width={20} height={20} src="/google.png" alt="google icon" />
           Sign with Google

@@ -22,7 +22,7 @@ export default function Login() {
     }) ;
 
     if (loginData?.error) {
-      handleMessage("Error", "Ooops!Something went wrong.", "destructive");
+      handleMessage("Error", "Ooops!Credentials invalid!", "destructive");
     } else {
       router.push("/home");
     }

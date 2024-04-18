@@ -64,7 +64,6 @@ export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token, user }) {
-      console.log(token);
       if (user) {
         return {
           ...token,

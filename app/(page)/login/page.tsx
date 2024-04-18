@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { handleMessage } from "@/lib/utils";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
@@ -14,35 +14,44 @@ export default function Login() {
 
     const email = event.currentTarget.email.value;
     const password = event.currentTarget.password.value;
-    
+
     const loginData = await signIn("credentials", {
       email: email,
       password: password,
-      redirect: false
-    }) ;
+      redirect: false,
+    });
 
     if (loginData?.error) {
       handleMessage("Error", "Ooops!Credentials invalid!", "destructive");
     } else {
       router.push("/home");
     }
-    
-  }
-
+  };
 
   return (
-    <div className="content">
+    <section className="login">
       <div className="title">
         <h2>Login Form</h2>
       </div>
 
-      <form onSubmit={e => {
-        Login(e)
-      }
-      }>
+      <form
+        onSubmit={(e) => {
+          Login(e);
+        }}
+      >
         <div className="input">
-          <input type="email" name="email" className="email" placeholder="Email" />
-          <input type="password" name="password" className="password" placeholder="Password" />
+          <input
+            type="email"
+            name="email"
+            className="email"
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            name="password"
+            className="password"
+            placeholder="Password"
+          />
         </div>
         <div className="button">
           <button>Login</button>
@@ -63,13 +72,15 @@ export default function Login() {
       </div>
       <p className="or">Or</p>
       <div className="google-sign">
-        <button onClick={() => {
-          signIn("google", {callbackUrl: "/home", redirect: true});
-        }}>
+        <button
+          onClick={() => {
+            signIn("google", { callbackUrl: "/home", redirect: true });
+          }}
+        >
           <Image width={20} height={20} src="/google.png" alt="google icon" />
           Sign with Google
-          </button>
+        </button>
       </div>
-    </div>
+    </section>
   );
 }

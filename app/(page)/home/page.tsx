@@ -6,7 +6,6 @@ import React from "react";
 export default async function Home() {
   const session = await getServerSession(authOptions);
   return (
-    <div className="content">
       <section className="home">
         <div className="avatar">
           <div className="profile">
@@ -24,6 +23,5 @@ export default async function Home() {
           <SignOutButton />
         </div>
       </section>
-    </div>
   );
 }

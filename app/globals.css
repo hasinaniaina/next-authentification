@@ -1,0 +1,378 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+.holder {
+  height: 100vh;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media  screen and (max-height: 582px) {
+  .holder  {
+    overflow-y: scroll;
+  }
+}
+
+.holder .color {
+  position: absolute;
+  filter: blur(150px);
+  z-index: 1;
+}
+
+.holder .color:nth-child(1) {
+  top: -300px;
+  width: 1210px;
+  right: 340px;
+  height: 600px;
+  background-color: #ff87e5;
+}
+
+.holder .color:nth-child(2) {
+  right: 33px;
+  bottom: -268px;
+  width: 600px;
+  height: 600px;
+  background-color: #1447ca;
+}
+
+.holder .color:nth-child(3) {
+  right: 119px;
+  bottom: -270px;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  background-color: #7300ce;
+}
+
+.holder .card {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 4;
+  padding: 50px 32px;
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  border-radius: 36px;
+  color: #fff;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+
+
+.holder .square {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.holder .square:first-child {
+  width: 100px;
+  height: 100px;
+  top: 11rem;
+  z-index: 5;
+  left: -5rem;
+  animation: bounce 10s ease infinite;
+}
+
+.holder .square:nth-child(2) {
+  width: 70px;
+  height: 70px;
+  bottom: 5rem;
+  z-index: 5;
+  left: 21rem;
+  border-radius: 14px;
+  animation: bounce 8s ease infinite;
+}
+
+.holder .square:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  bottom: -3rem;
+  z-index: 3;
+  left: 5rem;
+  border-radius: 10px;
+  animation: bounce 5s ease infinite;
+}
+
+.holder .square:nth-child(4) {
+  width: 110px;
+  height: 110px;
+  top: -2rem;
+  z-index: 5;
+  left: 19rem;
+  border-radius: 14px;
+  animation: bounce 13s ease infinite;
+}
+
+.holder .square:nth-child(5) {
+  width: 60px;
+  height: 60px;
+  top: -5rem;
+  z-index: 3;
+  left: 5rem;
+  border-radius: 10px;
+  animation: bounce 6s ease infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  75% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.holder .card .title {
+  margin-bottom: 2.3rem;
+}
+
+.holder .card .title::after {
+  content: "";
+  border: solid 2px #fff;
+  display: block;
+  width: 84px;
+}
+
+.holder .card .title h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.holder .card .input {
+  width: 300px;
+  margin-bottom: 0.7rem;
+}
+
+@media  screen and (max-width: 418px) {
+  .holder .card .input {
+    width: 240px;
+  }
+}
+
+.holder .card .input input {
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  border-radius: 36px;
+  height: 47px;
+  padding-left: 20px;
+  font-weight: 700;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.holder .card .input input:focus {
+  outline: none;
+}
+
+.holder .card .input input::placeholder {
+  color: #fff;
+  font-weight: 700;
+}
+
+.holder .card input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.holder .card .button {
+  margin-bottom: 2rem;
+}
+
+.holder .card .button button {
+  background-color: #fff;
+  color: #000;
+  padding: 5px 26px;
+  font-weight: 700;
+  border-radius: 36px;
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+.holder .card .text {
+  margin-bottom: 1rem;
+}
+
+.holder .card .text .forgot-password p,
+.not-account p {
+  font-size: 0.9rem;
+}
+
+.holder .card .text .forgot-password p a,
+.not-account p a {
+  text-decoration: underline;
+}
+.holder .card .or {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.holder .card .google-sign button{
+  background-color: #fff;
+  color: #000;
+  padding: 10px 26px;
+  font-weight: 700;
+  border-radius: 36px;
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.holder .card .google-sign button img {
+  margin-right: 0.6rem;
+}
+
+.holder .home .avatar {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height:300px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.holder .home .avatar .profile {
+  width: 260px;
+  height:260px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.holder .home .avatar .profile img {
+  width: 100%;
+}
+
+.holder .home .email {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.holder .home .button {
+  text-align: center;
+}

@@ -8,7 +8,11 @@ export default async function Home() {
       <section className="home">
         <div className="avatar">
           <div className="profile">
-              <img src="man.png" alt="profile" />
+              {session?.user?.image ? (
+                <img src={session?.user?.image} alt="profile" />
+              ): (
+                <img src="man.png" alt="profile" />
+              )}
           </div>
         </div>
         <div className="email">

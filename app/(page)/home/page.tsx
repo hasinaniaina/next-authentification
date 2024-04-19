@@ -1,19 +1,14 @@
 import SignOutButton from "@/components/SignOutButton";
-import { authOptions } from "@/lib/auth";
-import { getServerSession } from "next-auth";
+import { auth } from "@/lib/auth";
 import React from "react";
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
   return (
       <section className="home">
         <div className="avatar">
           <div className="profile">
-            {session?.user?.image ? (
-              <img src={session?.user?.image } alt="profile" />
-            ):(
               <img src="man.png" alt="profile" />
-            )}
           </div>
         </div>
         <div className="email">

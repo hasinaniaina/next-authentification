@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import React from "react";
-import { hash } from "bcrypt";
+import { hash } from "bcryptjs";
 
 
 export async function POST(req: Request) {

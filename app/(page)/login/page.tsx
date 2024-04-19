@@ -1,5 +1,6 @@
 "use client";
 import { handleMessage } from "@/lib/utils";
+import { DEFAULT_LOGIN_REDIRECT } from "@/route";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -74,7 +75,7 @@ export default function Login() {
       <div className="google-sign">
         <button
           onClick={() => {
-            signIn("google", { callbackUrl: "/home", redirect: true });
+            signIn("google", { callbackUrl: DEFAULT_LOGIN_REDIRECT, redirect: true });
           }}
         >
           <Image width={20} height={20} src="/google.png" alt="google icon" />

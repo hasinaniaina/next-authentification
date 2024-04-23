@@ -78,7 +78,7 @@ export default function Login() {
             signIn("google", { callbackUrl: DEFAULT_LOGIN_REDIRECT, redirect: true });
           }}
         >
-          <Image width={20} height={20} src="/google.png" alt="google icon" />
+          <img src="google.com" alt="google provider" />
           Sign with Google
         </button>
       </div>

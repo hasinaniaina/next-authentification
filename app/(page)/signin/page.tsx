@@ -1,7 +1,8 @@
 "use client";
-import { handleMessage } from "@/lib/utils";
+import { cn, handleMessage } from "@/lib/utils";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
 import * as z from "zod";
 
 const userSchema = z.object({
@@ -17,9 +18,11 @@ const userSchema = z.object({
 
 export default function Signin() {
   const router = useRouter();
+  const [signInLoadingButton, setSignInLoadingButton] = useState(false)
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSignInLoadingButton(true);
 
     const input = event.currentTarget;
 
@@ -40,7 +43,7 @@ export default function Signin() {
       });
 
       handleMessage("Something went wrong", errorMessage, "destructive");
-
+      setSignInLoadingButton(false);
       return;
     }
 
@@ -56,8 +59,10 @@ export default function Signin() {
 
     if (!response.success) {
       handleMessage("Something went wrong", response.message, "destructive");
+      setSignInLoadingButton(false);
     } else {
       handleMessage("Success", response.message, "default");
+      setSignInLoadingButton(false);
       router.push("/login");
     }
   };
@@ -95,7 +100,19 @@ export default function Signin() {
           />
         </div>
         <div className="button">
-          <button>Sign In</button>
+          <button>
+            <span className={cn({"disappear":!signInLoadingButton})}>
+              <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                <circle className="spin2" cx="400" cy="400" fill="none"
+                r="200" stroke-width="50" stroke="#000"
+                stroke-dasharray="700 1400"
+                stroke-linecap="round" />
+              </svg>
+            </span>
+            <span className={cn({"disappear":signInLoadingButton})}>Sign In</span> </button>
+        </div>
+        <div className="back-login">
+          <Link href="/login">Back to login page</Link>
         </div>
       </form>
     </section>

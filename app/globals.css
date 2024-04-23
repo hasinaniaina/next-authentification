@@ -304,7 +304,16 @@ input:-webkit-autofill:active {
   font-weight: 700;
   border-radius: 36px;
   box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+.holder .card button .disappear {
+  display: none!important;
+}
+
 
 .holder .card .text {
   margin-bottom: 1rem;
@@ -333,13 +342,25 @@ input:-webkit-autofill:active {
   border-radius: 36px;
   box-shadow: 0px 25px 45px rgba(0, 0, 0, 0.1);
   width: 100%;
+}
+
+.holder .card .google-sign button span {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.holder .card .google-sign button img {
+.holder .card .google-sign button span img {
   margin-right: 0.6rem;
+}
+
+.holder .card .signin .back-login {
+  text-align: center;
+}
+
+.holder .card .signin .back-login a {
+  font-size: 1rem;
+  text-decoration: underline;
 }
 
 .holder .home .avatar {
@@ -375,4 +396,37 @@ input:-webkit-autofill:active {
 
 .holder .home .button {
   text-align: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    stroke-dasharray: 1, 800;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 400, 400;
+    stroke-dashoffset: -200px;
+  }
+  100% {
+    stroke-dasharray: 800, 1;
+    stroke-dashoffset: -800px;
+  }
+}
+
+.spin2 {
+  transform-origin: center;
+  animation: spin2 1.5s ease-in-out infinite,
+    spin 2s linear infinite;
+  animation-direction: alternate;
+  display: inline;
+}
+
+svg {
+  width: 25px;
 }

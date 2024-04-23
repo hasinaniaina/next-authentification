@@ -11,7 +11,7 @@ export default async function Home() {
               {session?.user?.image ? (
                 <img src={session?.user?.image} alt="profile" />
               ): (
-                <img src="man.png" alt="profile" />
+                <img src="images/man.png" alt="profile" />
               )}
           </div>
         </div>

@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { FormEvent } from "react";
+import google from "@/public/google-icon.png";
+
 
 export default function Login() {
   const router = useRouter();
@@ -78,7 +80,8 @@ export default function Login() {
             signIn("google", { callbackUrl: DEFAULT_LOGIN_REDIRECT, redirect: true });
           }}
         >
-          <img src="google.png" alt="google provider" />
+      
+          <Image width={20} height={20}  src={`/images/google.png`} alt="google icon" />
           Sign with Google
         </button>
       </div>

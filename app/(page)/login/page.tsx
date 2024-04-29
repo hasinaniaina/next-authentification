@@ -78,9 +78,9 @@ export default function Login() {
 
       <div className="text">
         <div className="forgot-password">
-          <p>
+          {/* <p>
             Forgot password? <Link href="/forgotPassword">Click Here</Link>
-          </p>
+          </p> */}
         </div>
         <div className="not-account">
           <p>
@@ -107,7 +107,7 @@ export default function Login() {
           </span>
           <span className={cn({"disappear":googleLoginButtonLoading})}>
             <Image width={20} height={20}  src={`/images/google.png`} alt="google icon" />
-            Sign with Google
+            Continue with Google
           </span>
         </button>
       </div>
